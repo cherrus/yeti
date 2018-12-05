@@ -48,7 +48,47 @@ $user_avatar = 'img/user.jpg';
         </nav>
     </div>
 </header>
-
+<?php
+    $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты", "Разное"];
+    $advt_list = [
+            [
+                "name" => "2014 Rossignol District Snowboard",
+                "category" => "Доски и лыжи",
+                "price" => "10999",
+                "image_url" => "img/lot-1.jpg",
+            ],
+            [
+                "name" => "DC Ply Mens 2016/2017 Snowboard",
+                "category" => "Доски и лыжи",
+                "price" => "159999",
+                "image_url" => "img/lot-2.jpg",
+            ],
+            [
+                "name" => "Крепления Union Contact Pro 2015 года размер L/XL",
+                "category" => "Крепления",
+                "price" => "8000",
+                "image_url" => "img/lot-3.jpg",
+            ],
+            [
+                "name" => "Ботинки для сноуборда DC Mutiny Charocal",
+                "category" => "Ботинки",
+                "price" => "10999",
+                "image_url" => "img/lot-4.jpg",
+            ],
+            [
+                "name" => "Куртка для сноуборда  DC Mutiny Charocal",
+                "category" => "Одежда",
+                "price" => "7500",
+                "image_url" => "img/lot-5.jpg",
+            ],
+            [
+                "name" => "Маска Oakley Canopy",
+                "category" => "Разное",
+                "price" => "5400",
+                "image_url" => "img/lot-6.jpg",
+            ]
+    ];
+?>
 <main class="container">
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
@@ -104,24 +144,13 @@ $user_avatar = 'img/user.jpg';
 <footer class="main-footer">
     <nav class="nav">
         <ul class="nav__list container">
-            <li class="nav__item">
-                <a href="all-lots.html">Доски и лыжи</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Крепления</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Ботинки</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Одежда</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Инструменты</a>
-            </li>
-            <li class="nav__item">
-                <a href="all-lots.html">Разное</a>
-            </li>
+            <?php $index = 0; ?>
+            <?php while ($index < count($categories)): ?>
+                <li class="nav__item">
+                    <a href="all-lots.html"><?=$categories[$index];?></a>
+                </li>
+            <?php $index++; ?>
+            <?php endwhile; ?>
         </ul>
     </nav>
     <div class="main-footer__bottom container">
