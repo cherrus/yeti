@@ -89,6 +89,16 @@ $user_avatar = 'img/user.jpg';
             ]
     ];
 ?>
+<?php
+    function price_format($price){
+        $result = ceil($price);
+        if ($result >= 1000){
+            return number_format($result, 0, "", " ") . " &#8381";
+        }
+        else
+            return $result . "&#8381" ;
+    }
+?>
 <main class="container">
     <section class="promo">
         <h2 class="promo__title">Нужен стафф для катки?</h2>
@@ -131,7 +141,7 @@ $user_avatar = 'img/user.jpg';
                     <div class="lot__state">
                         <div class="lot__rate">
                             <span class="lot__amount">Стартовая цена</span>
-                            <span class="lot__cost"><?=$lots_list[$index]["price"];?><b class="rub">р</b></span>
+                            <span class="lot__cost"><?=price_format($lots_list[$index]["price"]);?></span>
                         </div>
                         <div class="lot__timer timer">
 
