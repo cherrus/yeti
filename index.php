@@ -88,8 +88,6 @@ $user_avatar = 'img/user.jpg';
                 "image_url" => "img/lot-6.jpg",
             ]
     ];
-?>
-<?php
     function price_format($price){
         $result = ceil($price);
         if ($result >= 1000){
