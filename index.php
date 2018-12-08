@@ -38,6 +38,12 @@ $lots_list = [
         "category" => "Разное",
         "price" => "5400",
         "image_url" => "img/lot-6.jpg",
+    ],
+    [
+        "name" => "<script>alert('Evil!')</script>",
+        "category" => "Разное",
+        "price" => "<script>alert('Evil!')</script>",
+        "image_url" => "img/lot-6.jpg",
     ]
 ];
 require_once ("functions.php");

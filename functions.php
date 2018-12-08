@@ -8,7 +8,7 @@ function include_template($template, $data){
             $name = $key_clone;
             $$name = $value;
         }
-        //indian shit code
+        //indian shitcode
         /*if(isset($data["content"]))
             $content = $data["content"];
         if(isset($data["title"]))
@@ -27,7 +27,9 @@ function include_template($template, $data){
     else
        return "ebi koney suka";
 }
+
 function price_format($price){
+    $price = strip_tags($price);
     $result = ceil($price);
     if ($result >= 1000){
         return number_format($result, 0, "", " ") . " &#8381";
@@ -35,3 +37,8 @@ function price_format($price){
     else
         return $result . "&#8381" ;
 }
+
+/*
+function filter_user_text($string){
+    return htmlspecialchars($string);
+}*/
