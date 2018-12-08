@@ -1,4 +1,5 @@
 <?php
+
 $user_name = 'Константин';
 $user_avatar = 'img/user.jpg';
 $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты", "Разное"];
@@ -38,14 +39,9 @@ $lots_list = [
         "category" => "Разное",
         "price" => "5400",
         "image_url" => "img/lot-6.jpg",
-    ],
-    [
-        "name" => "<script>alert('Evil!')</script>",
-        "category" => "Разное",
-        "price" => "<script>alert('Evil!')</script>",
-        "image_url" => "img/lot-6.jpg",
     ]
 ];
+
 require_once ("functions.php");
 
 $page_content = include_template("templates/index.php", ["categories" => $categories, "lots_list" => $lots_list]);

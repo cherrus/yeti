@@ -1,7 +1,12 @@
 <?php
+date_default_timezone_set("Europe/Moscow");
+setlocale(LC_ALL, "ru_RU");
+
 $is_auth = (bool) rand(0, 1); ?>
+
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <title><?=$title;?></title>

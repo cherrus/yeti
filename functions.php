@@ -38,7 +38,10 @@ function price_format($price){
         return $result . "&#8381" ;
 }
 
-/*
-function filter_user_text($string){
-    return htmlspecialchars($string);
-}*/
+function terminate_time(){
+    $ts_midnight = strtotime("tomorrow");
+    $timer = $ts_midnight - time();
+    $hours = floor($timer/3600);
+    $minutes = floor(($timer % 3600) / 60);
+    return "$hours : $minutes";
+}
