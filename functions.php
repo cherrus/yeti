@@ -9,7 +9,7 @@ function includeMarkupTemplateFile(string $markupTemplateFile, array $pageData):
         }*/
         extract($pageData);
         ob_start();
-        require_once($markupTemplateFile);
+        require_once $markupTemplateFile;
         return ob_get_clean();
     }
     else
