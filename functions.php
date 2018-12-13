@@ -1,7 +1,7 @@
 <?php
-function includePagesMarkupTemplate(string $pageMarkupTemplate, array $pageData):string {
+function includeMarkupTemplateFile(string $markupTemplateFile, array $pageData):string {
     //ini_set("zlib.output_compression", 0);
-    if (file_exists($pageMarkupTemplate)){
+    if (file_exists($markupTemplateFile)){
         /*foreach($pageData as $key => $value){
             $key_clone = &$key;
             $name = $key_clone;
@@ -9,7 +9,7 @@ function includePagesMarkupTemplate(string $pageMarkupTemplate, array $pageData)
         }*/
         extract($pageData);
         ob_start();
-        require_once($pageMarkupTemplate);
+        require_once($markupTemplateFile);
         return ob_get_clean();
     }
     else

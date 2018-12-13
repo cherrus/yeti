@@ -44,8 +44,8 @@ $lotsList = [
 
 require_once ("functions.php");
 
-$pageContent = includePagesMarkupTemplate("templates/index.php", ["categories" => $categories, "lotsList" => $lotsList]);
-$layoutContent = includePagesMarkupTemplate("templates/layout.php", ["content" => $pageContent, "title" => "Главная",
+$pageContent = includeMarkupTemplateFile("templates/index.php", ["categories" => $categories, "lotsList" => $lotsList]);
+$layoutContent = includeMarkupTemplateFile("templates/layout.php", ["content" => $pageContent, "title" => "Главная",
     "userName" => $userName, "userAvatar" => $userAvatar]);
 
 print($layoutContent);
