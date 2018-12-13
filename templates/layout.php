@@ -2,7 +2,7 @@
 date_default_timezone_set("Europe/Moscow");
 setlocale(LC_ALL, "ru_RU");
 
-$is_auth = (bool) rand(0, 1); ?>
+$isAuth = (bool) rand(0, 1); ?>
 
 <!DOCTYPE html>
 <html lang="ru">
@@ -29,12 +29,12 @@ $is_auth = (bool) rand(0, 1); ?>
 
         <nav class="user-menu">
             <!-- PHP код для показа аватара пользователя -->
-            <?php if($is_auth):?>
+            <?php if($isAuth):?>
                 <div class="user-menu__image">
-                    <img src="<?=$user_avatar;?>" width="40" height="40" alt="Пользователь">
+                    <img src="<?=$userAvatar;?>" width="40" height="40" alt="Пользователь">
                 </div>
                 <div class="user-menu__logged">
-                    <p><?=$user_name;?></p>
+                    <p><?=$userName;?></p>
                 </div>
             <?php else:?>
                 <ul class="user-menu__list">

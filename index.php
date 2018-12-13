@@ -1,51 +1,51 @@
 <?php
 
-$user_name = 'Константин';
-$user_avatar = 'img/user.jpg';
+$userName = 'Константин';
+$userAvatar = 'img/user.jpg';
 $categories = ["Доски и лыжи","Крепления","Ботинки","Одежда","Инструменты", "Разное"];
-$lots_list = [
+$lotsList = [
     [
         "name" => "2014 Rossignol District Snowboard",
         "category" => "Доски и лыжи",
         "price" => "10999",
-        "image_url" => "img/lot-1.jpg",
+        "imageUrl" => "img/lot-1.jpg",
     ],
     [
         "name" => "DC Ply Mens 2016/2017 Snowboard",
         "category" => "Доски и лыжи",
         "price" => "159999",
-        "image_url" => "img/lot-2.jpg",
+        "imageUrl" => "img/lot-2.jpg",
     ],
     [
         "name" => "Крепления Union Contact Pro 2015 года размер L/XL",
         "category" => "Крепления",
         "price" => "8000",
-        "image_url" => "img/lot-3.jpg",
+        "imageUrl" => "img/lot-3.jpg",
     ],
     [
         "name" => "Ботинки для сноуборда DC Mutiny Charocal",
         "category" => "Ботинки",
         "price" => "10999",
-        "image_url" => "img/lot-4.jpg",
+        "imageUrl" => "img/lot-4.jpg",
     ],
     [
         "name" => "Куртка для сноуборда  DC Mutiny Charocal",
         "category" => "Одежда",
         "price" => "7500",
-        "image_url" => "img/lot-5.jpg",
+        "imageUrl" => "img/lot-5.jpg",
     ],
     [
         "name" => "Маска Oakley Canopy",
         "category" => "Разное",
         "price" => "5400",
-        "image_url" => "img/lot-6.jpg",
+        "imageUrl" => "img/lot-6.jpg",
     ]
 ];
 
 require_once ("functions.php");
 
-$page_content = include_template("templates/index.php", ["categories" => $categories, "lots_list" => $lots_list]);
-$layout_content = include_template("templates/layout.php", ["content" => $page_content, "title" => "Главная",
-    "user_name" => $user_name, "user_avatar" => $user_avatar]);
+$pageContent = includePagesMarkupTemplate("templates/index.php", ["categories" => $categories, "lotsList" => $lotsList]);
+$layoutContent = includePagesMarkupTemplate("templates/layout.php", ["content" => $pageContent, "title" => "Главная",
+    "userName" => $userName, "userAvatar" => $userAvatar]);
 
-print($layout_content);
+print($layoutContent);

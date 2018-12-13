@@ -1,34 +1,22 @@
 <?php
-function include_template($template, $data){
+function includePagesMarkupTemplate(string $pageMarkupTemplate, array $pageData):string {
     //ini_set("zlib.output_compression", 0);
-    if (file_exists($template)){
-
-        foreach($data as $key => $value){
+    if (file_exists($pageMarkupTemplate)){
+        /*foreach($pageData as $key => $value){
             $key_clone = &$key;
             $name = $key_clone;
             $$name = $value;
-        }
-        //indian shitcode
-        /*if(isset($data["content"]))
-            $content = $data["content"];
-        if(isset($data["title"]))
-            $title = $data["title"];
-        if(isset($data["lots_list"]))
-            $lots_list = $data["lots_list"];
-        if(isset($data["categories"]))
-            $categories = $data["categories"];
-        ..etc
-        */
-        //or like switch
+        }*/
+        extract($pageData);
         ob_start();
-        require_once($template);
+        require_once($pageMarkupTemplate);
         return ob_get_clean();
     }
     else
        return "ebi koney suka";
 }
 
-function price_format($price){
+function priceFormatRubles(string $price):string {
     $price = strip_tags($price);
     $result = ceil($price);
     if ($result >= 1000){
@@ -38,9 +26,9 @@ function price_format($price){
         return $result . "&#8381" ;
 }
 
-function terminate_time(){
-    $ts_midnight = strtotime("tomorrow");
-    $timer = $ts_midnight - time();
+function terminateTime():string {
+    $tsMidnight = strtotime("tomorrow");
+    $timer = $tsMidnight - time();
     $hours = floor($timer/3600);
     $minutes = floor(($timer % 3600) / 60);
     return "$hours : $minutes";
