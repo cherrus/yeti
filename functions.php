@@ -1,9 +1,9 @@
 <?php
-function includeMarkupTemplateFile(string $markupTemplateFile, array $pageData):string
-{
+function includeMarkupTemplateFile(string $markupTemplateFile,
+    array $pageData):string {
     //ini_set("zlib.output_compression", 0);
     if (file_exists($markupTemplateFile)) {
-        /*foreach($pageData as $key => $value){
+        /*foreach ($pageData as $key => $value) {
             $key_clone = &$key;
             $name = $key_clone;
             $$name = $value;
